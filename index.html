@@ -131,6 +131,35 @@
   .step h3 { font-size: 1.35rem; text-transform: uppercase; margin-bottom: .5rem; }
   .step p { font-size: .92rem; color: var(--muted); }
 
+  /* ---------- RECONDITIONING ---------- */
+  .recon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.3rem; }
+  @media (max-width: 980px) { .recon-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 640px) { .recon-grid { grid-template-columns: 1fr; } }
+  .recon-item {
+    background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 1.5rem 1.4rem;
+    display: flex; gap: 1rem; align-items: flex-start;
+    opacity: 0; transform: translateY(18px); transition: opacity .5s ease, transform .5s ease;
+  }
+  .recon-item.in { opacity: 1; transform: none; }
+  .recon-item h3 { font-size: 1.2rem; text-transform: uppercase; line-height: 1.15; margin-bottom: .35rem; }
+  .recon-item p { font-size: .88rem; color: var(--muted); }
+  .recon-check { flex: none; width: 40px; height: 40px; }
+  .recon-check svg { width: 40px; height: 40px; }
+  .recon-check circle { fill: none; stroke: var(--line); stroke-width: 3; transition: stroke .4s; }
+  .recon-check path {
+    fill: none; stroke: var(--red); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 30; stroke-dashoffset: 30;
+  }
+  .recon-item.in .recon-check circle { stroke: var(--red); }
+  .recon-item.in .recon-check path { animation: draw .45s ease forwards; animation-delay: .25s; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  .recon-seal {
+    margin-top: 2rem; display: flex; align-items: center; gap: 1.1rem;
+    background: var(--dark); color: #C9CDD4; border-radius: 12px; padding: 1.2rem 1.5rem; font-size: .92rem;
+  }
+  .recon-seal svg { width: 54px; height: 54px; flex: none; }
+  .recon-seal b { color: #fff; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; letter-spacing: 1px; font-size: 1.1rem; }
+
   /* ---------- ESTIMATOR ---------- */
   #estimator { background: linear-gradient(160deg, #1B1E24 0%, #14161A 70%); color: #fff; }
   #estimator .sec-head p { color: #A7ADB8; }
@@ -306,7 +335,7 @@
       <div class="hero-perks">
         <span>Dealer-only auction access</span>
         <span>Flat broker fee — no games</span>
-        <span>Every unit inspected</span>
+        <span>Every unit fully reconditioned</span>
       </div>
     </div>
 
@@ -379,8 +408,55 @@
         <p>Year, make, model, budget, deal-breakers. We run real recent sale prices with you — the same numbers dealers see — before you commit to anything.</p></div>
       <div class="step"><b class="num">02</b><h3>We bid it live</h3>
         <p>Our buyers work 200+ dealer-only auctions nationwide. You get condition reports, photos, and a hard max bid you set. No win, no fee.</p></div>
-      <div class="step"><b class="num">03</b><h3>Inspected &amp; delivered</h3>
-        <p>Won units get a full mechanical once-over and fresh tires at TreadZone before handoff. Drive it home with the paperwork done.</p></div>
+      <div class="step"><b class="num">03</b><h3>Reconditioned &amp; delivered</h3>
+        <p>Won units go through the full TreadZone reconditioning line — fluids, brakes, timing, fresh tires, even paint — before you ever get the keys. <a href="#recon" style="color:var(--red); font-weight:600;">See the checklist ↓</a></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RECONDITIONING ============ -->
+<section id="recon" style="background: var(--bg); border-top: 1px solid var(--line);">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">TreadZone Certified</div>
+      <h2>Every vehicle earns its keys</h2>
+      <p>No unit — sourced, rental, or fleet — leaves the shop until it clears the full reconditioning line. Checked, replaced, and signed off. Not "as-is." Ever.</p>
+    </div>
+    <div class="recon-grid">
+      <div class="recon-item">
+        <span class="recon-check" aria-hidden="true"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="16"/><path d="M11 18.5 L16 23.5 L25 12.5"/></svg></span>
+        <div><h3>Fluids checked &amp; replaced</h3>
+        <p>Coolant, transmission, brake, power steering, and washer fluid — flushed or topped to spec, no exceptions.</p></div>
+      </div>
+      <div class="recon-item">
+        <span class="recon-check" aria-hidden="true"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="16"/><path d="M11 18.5 L16 23.5 L25 12.5"/></svg></span>
+        <div><h3>Fresh oil &amp; filter</h3>
+        <p>Full synthetic oil change with a new filter on every unit, with the service sticker to prove it.</p></div>
+      </div>
+      <div class="recon-item">
+        <span class="recon-check" aria-hidden="true"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="16"/><path d="M11 18.5 L16 23.5 L25 12.5"/></svg></span>
+        <div><h3>New TreadZone tires</h3>
+        <p>A fresh set fitted, balanced, and aligned next door at TreadZone Tire &amp; Wheel — never sold on worn rubber.</p></div>
+      </div>
+      <div class="recon-item">
+        <span class="recon-check" aria-hidden="true"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="16"/><path d="M11 18.5 L16 23.5 L25 12.5"/></svg></span>
+        <div><h3>Brakes &amp; rotors inspected</h3>
+        <p>Pads measured, rotors checked for wear and warp — anything under spec gets replaced before handoff.</p></div>
+      </div>
+      <div class="recon-item">
+        <span class="recon-check" aria-hidden="true"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="16"/><path d="M11 18.5 L16 23.5 L25 12.5"/></svg></span>
+        <div><h3>Timing belt &amp; drive components</h3>
+        <p>Timing belt or chain verified against service intervals, plus serpentine belt, hoses, and battery health.</p></div>
+      </div>
+      <div class="recon-item">
+        <span class="recon-check" aria-hidden="true"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="16"/><path d="M11 18.5 L16 23.5 L25 12.5"/></svg></span>
+        <div><h3>Paint &amp; body correction</h3>
+        <p>Scratches, chips, and panel blemishes corrected or resprayed as needed, so it looks as good as it runs.</p></div>
+      </div>
+    </div>
+    <div class="recon-seal">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#17191D"/><circle cx="50" cy="50" r="40" fill="none" stroke="#E11D2E" stroke-width="7" stroke-dasharray="9 7"/><path d="M32 52 L44 64 L70 36" fill="none" stroke="#E11D2E" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div><b>TreadZone Certified</b> — the checklist is signed by the tech who ran it and rides in the glovebox of every vehicle we hand over.</div>
     </div>
   </div>
 </section>
@@ -538,7 +614,7 @@
       <details><summary>What's included in fleet pricing?</summary>
         <p>Insurance-ready inspected vehicles, maintenance, roadside swap, and full tire care (tires, rotations, flat repair) through TreadZone Tire &amp; Wheel. You fuel it and drive it.</p></details>
       <details><summary>What if the car has problems when it arrives?</summary>
-        <p>Every unit passes a mechanical inspection and a fresh-tire fitting before handoff. If something material was missed in the condition report, we make it right or run the arbitration process with the auction house on your behalf.</p></details>
+        <p>Every unit runs the full TreadZone Certified line before handoff — fluids replaced, fresh oil, new tires, brakes and rotors inspected, timing components verified, and paint corrected where needed. If something material was still missed in the auction condition report, we make it right or run the arbitration process with the auction house on your behalf.</p></details>
       <details><summary>Do you rent to businesses only?</summary>
         <p>No — the daily rental fleet is open to anyone 21+ with a license and card. The fleet program (multi-vehicle, multi-month) is where the business pricing kicks in.</p></details>
     </div>
@@ -659,6 +735,15 @@ document.getElementById('srcGo').addEventListener('click', () => {
 new IntersectionObserver((entries, obs) => {
   if (entries[0].isIntersecting) { runEstimate(); obs.disconnect(); }
 }, { threshold: .35 }).observe(document.getElementById('estimator'));
+
+/* ============ recon checklist stagger ============ */
+const reconItems = [...document.querySelectorAll('.recon-item')];
+new IntersectionObserver((entries, obs) => {
+  if (entries.some(e => e.isIntersecting)) {
+    reconItems.forEach((el, i) => setTimeout(() => el.classList.add('in'), i * 140));
+    obs.disconnect();
+  }
+}, { threshold: .2 }).observe(document.querySelector('.recon-grid'));
 
 /* ============ rental fleet ============ */
 const FLEET = [
