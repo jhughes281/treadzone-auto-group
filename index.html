@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TreadZone Auto Group — Auction Sourcing, Rentals & Fleet | Houston, TX</title>
+<meta name="description" content="Skip the dealership. TreadZone Auto Group sources vehicles at dealer-only auctions, rents daily drivers, and builds business fleets. A TreadZone Tire & Wheel company.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%2317191D'/><circle cx='50' cy='50' r='40' fill='none' stroke='%23E11D2E' stroke-width='7' stroke-dasharray='9 7'/><path d='M30 62 L42 40 L58 40 L70 62 Z M36 62 a6 6 0 1 0 12 0 M52 62 a6 6 0 1 0 12 0' fill='%23E11D2E'/></svg>">
+<style>
+  :root {
+    --red: #E11D2E;
+    --red-dark: #B8121F;
+    --dark: #17191D;
+    --steel: #23262C;
+    --line: #E3E6EA;
+    --text: #1C1E22;
+    --muted: #5C636E;
+    --bg: #F5F6F8;
+    --white: #fff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+  h1, h2, h3, .btn, .tab, label { font-family: 'Barlow Condensed', sans-serif; }
+  h1, h2 { text-transform: uppercase; letter-spacing: .5px; }
+  .wrap { width: min(1180px, 93%); margin: 0 auto; }
+  img, svg { max-width: 100%; }
+
+  /* ---------- UTILITY BAR ---------- */
+  .util { background: var(--dark); color: #C9CDD4; font-size: .82rem; }
+  .util-inner { display: flex; justify-content: space-between; gap: 1rem; padding: .45rem 0; flex-wrap: wrap; }
+  .util a { color: #fff; text-decoration: none; font-weight: 600; }
+  .util .dot { color: var(--red); margin: 0 .5rem; }
+
+  /* ---------- NAV ---------- */
+  nav.top { background: var(--white); border-bottom: 3px solid var(--red); position: sticky; top: 0; z-index: 60; box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: .8rem 0; gap: 1rem; }
+  .brand { display: flex; align-items: center; gap: .65rem; text-decoration: none; color: var(--text); }
+  .brand svg { width: 42px; height: 42px; }
+  .brand b { font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; font-weight: 800; text-transform: uppercase; line-height: 1; }
+  .brand b span { color: var(--red); }
+  .brand small { display: block; font-size: .62rem; letter-spacing: 2.5px; color: var(--muted); text-transform: uppercase; font-family: 'Inter', sans-serif; }
+  .nav-links { display: flex; gap: 1.6rem; list-style: none; align-items: center; }
+  .nav-links a { text-decoration: none; color: var(--text); font-weight: 600; font-size: .92rem; font-family: 'Inter', sans-serif; }
+  .nav-links a:hover { color: var(--red); }
+  @media (max-width: 900px) { .nav-links li:not(:last-child) { display: none; } }
+  .btn {
+    display: inline-block; text-decoration: none; text-transform: uppercase; letter-spacing: .8px;
+    font-weight: 700; font-size: 1.02rem; padding: .7rem 1.6rem; border-radius: 6px;
+    border: 0; cursor: pointer; transition: background .15s ease, transform .15s ease;
+  }
+  .btn.red { background: var(--red); color: #fff; }
+  .btn.red:hover { background: var(--red-dark); transform: translateY(-1px); }
+  .btn.outline { border: 2px solid var(--dark); color: var(--dark); background: transparent; }
+  .btn.outline:hover { border-color: var(--red); color: var(--red); }
+  .btn.ghost-w { border: 2px solid rgba(255,255,255,.4); color: #fff; background: transparent; }
+  .btn.ghost-w:hover { border-color: var(--red); color: #fff; }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    background:
+      radial-gradient(ellipse at 75% 20%, rgba(225, 29, 46, .18), transparent 55%),
+      linear-gradient(160deg, #1B1E24 0%, #14161A 60%, #0F1114 100%);
+    color: #fff; padding: 3.8rem 0 4.2rem; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; right: -180px; top: 50%; transform: translateY(-50%);
+    width: 560px; height: 560px; border-radius: 50%;
+    border: 60px solid transparent;
+    background: repeating-conic-gradient(#2A2E36 0deg 7deg, transparent 7deg 14deg) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    opacity: .55; pointer-events: none;
+  }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 3rem; align-items: center; position: relative; }
+  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+  .hero .kicker { color: var(--red); font-weight: 700; letter-spacing: 3px; text-transform: uppercase; font-size: .85rem; }
+  .hero h1 { font-size: clamp(2.5rem, 5.5vw, 4.2rem); font-weight: 800; line-height: .98; margin: .7rem 0 1rem; }
+  .hero h1 em { font-style: normal; color: var(--red); }
+  .hero p { color: #A7ADB8; max-width: 46ch; }
+  .hero-perks { display: flex; gap: 1.6rem; margin-top: 1.6rem; flex-wrap: wrap; font-size: .88rem; color: #C9CDD4; }
+  .hero-perks span::before { content: '✓ '; color: var(--red); font-weight: 700; }
+
+  /* hero card */
+  .finder { background: #fff; color: var(--text); border-radius: 12px; overflow: hidden; box-shadow: 0 25px 60px rgba(0,0,0,.45); }
+  .tabs { display: flex; background: var(--bg); border-bottom: 1px solid var(--line); }
+  .tab {
+    flex: 1; padding: .95rem .5rem; text-align: center; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .8px; font-size: 1rem; color: var(--muted); cursor: pointer; border: 0; background: transparent;
+    border-bottom: 3px solid transparent;
+  }
+  .tab.active { color: var(--red); border-bottom-color: var(--red); background: #fff; }
+  .panel { display: none; padding: 1.5rem 1.5rem 1.7rem; }
+  .panel.active { display: block; }
+  .panel h3 { font-size: 1.25rem; text-transform: uppercase; margin-bottom: 1rem; }
+  .selects { display: grid; grid-template-columns: repeat(2, 1fr); gap: .8rem; margin-bottom: 1.1rem; }
+  label { display: block; font-weight: 700; text-transform: uppercase; font-size: .8rem; letter-spacing: 1px; color: var(--muted); margin-bottom: .3rem; }
+  select, input[type=text], input[type=tel] {
+    width: 100%; padding: .65rem .6rem; border: 2px solid var(--line); border-radius: 6px;
+    font-family: 'Inter', sans-serif; font-size: .95rem; font-weight: 600; color: var(--text); background: #fff;
+  }
+  select:focus, input:focus { outline: none; border-color: var(--red); }
+  .finder .btn { width: 100%; }
+  .finder .hint { font-size: .78rem; color: var(--muted); margin-top: .8rem; }
+
+  /* ---------- STATS STRIP ---------- */
+  .stats { background: var(--bg); border-bottom: 1px solid var(--line); padding: 1.6rem 0; }
+  .stat-row { display: flex; gap: 2rem; justify-content: space-around; flex-wrap: wrap; text-align: center; }
+  .stat b { font-family: 'Barlow Condensed', sans-serif; font-size: 2.1rem; font-weight: 800; color: var(--dark); display: block; line-height: 1; }
+  .stat b i { font-style: normal; color: var(--red); }
+  .stat span { font-size: .78rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); }
+
+  /* ---------- SECTIONS ---------- */
+  section { padding: 4.2rem 0; }
+  .sec-head { max-width: 640px; margin-bottom: 2.4rem; }
+  .sec-head .kicker { color: var(--red); font-weight: 700; letter-spacing: 3px; text-transform: uppercase; font-size: .8rem; font-family: 'Barlow Condensed', sans-serif; }
+  h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.05; margin: .35rem 0 .6rem; }
+  .sec-head p { color: var(--muted); }
+
+  /* how it works */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+  @media (max-width: 820px) { .steps { grid-template-columns: 1fr; } }
+  .step { background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 1.8rem 1.6rem; position: relative; }
+  .step b.num {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 3rem; font-weight: 800; color: var(--red);
+    opacity: .18; position: absolute; top: .6rem; right: 1.1rem; line-height: 1;
+  }
+  .step h3 { font-size: 1.35rem; text-transform: uppercase; margin-bottom: .5rem; }
+  .step p { font-size: .92rem; color: var(--muted); }
+
+  /* ---------- ESTIMATOR ---------- */
+  #estimator { background: linear-gradient(160deg, #1B1E24 0%, #14161A 70%); color: #fff; }
+  #estimator .sec-head p { color: #A7ADB8; }
+  .est-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 2.6rem; align-items: start; }
+  @media (max-width: 880px) { .est-grid { grid-template-columns: 1fr; } }
+  .est-chips { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.4rem; }
+  .chip {
+    border: 2px solid #343943; background: transparent; color: #C9CDD4; border-radius: 999px;
+    padding: .5rem 1.1rem; font-weight: 600; font-size: .88rem; cursor: pointer; font-family: 'Inter', sans-serif;
+    transition: all .15s;
+  }
+  .chip:hover { border-color: var(--red); }
+  .chip.active { border-color: var(--red); background: var(--red); color: #fff; }
+  .est-panel label { color: #8B919C; }
+  .est-panel select { background: #22262D; border-color: #343943; color: #fff; margin-bottom: 1rem; }
+  .bars { display: grid; gap: 1.3rem; margin: 1.2rem 0 1.6rem; }
+  .bar-row .bar-label { display: flex; justify-content: space-between; font-size: .82rem; letter-spacing: 1px; text-transform: uppercase; color: #8B919C; margin-bottom: .4rem; font-weight: 600; }
+  .bar-row .bar-label b { color: #fff; font-family: 'Barlow Condensed', sans-serif; font-size: 1.15rem; letter-spacing: .5px; }
+  .bar-track { height: 26px; background: #22262D; border-radius: 6px; overflow: hidden; }
+  .bar-fill { height: 100%; width: 0; border-radius: 6px; transition: width 1s cubic-bezier(.2,.7,.2,1); }
+  .bar-fill.retail { background: #4A505B; }
+  .bar-fill.ours { background: linear-gradient(90deg, var(--red-dark), var(--red)); }
+  .save-line { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; border-top: 1px solid #2C313A; padding-top: 1.2rem; }
+  .save-line .lbl { font-size: .8rem; letter-spacing: 2px; text-transform: uppercase; color: #8B919C; font-weight: 700; }
+  .save-line b { font-family: 'Barlow Condensed', sans-serif; font-size: 3rem; font-weight: 800; color: var(--red); line-height: 1; }
+  .est-fine { font-size: .75rem; color: #6B717C; margin-top: 1rem; }
+
+  /* ---------- RENTAL FLEET ---------- */
+  #rentals { background: var(--bg); }
+  .filter-row { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.8rem; }
+  .fchip {
+    border: 2px solid var(--line); background: #fff; border-radius: 999px; padding: .45rem 1.1rem;
+    font-weight: 600; font-size: .88rem; cursor: pointer; font-family: 'Inter', sans-serif; color: var(--muted);
+  }
+  .fchip.active { border-color: var(--red); color: var(--red); }
+  .fleet-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.3rem; }
+  .car {
+    background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .car:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(0,0,0,.1); }
+  .car-top {
+    height: 110px; display: grid; place-items: center; position: relative;
+    background: linear-gradient(150deg, #1B1E24, #2A2E36);
+  }
+  .car-top svg { width: 150px; height: 66px; }
+  .car-top .cls {
+    position: absolute; top: .7rem; left: .8rem; background: var(--red); color: #fff;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700; text-transform: uppercase;
+    font-size: .74rem; letter-spacing: 1.2px; padding: .18rem .6rem; border-radius: 4px;
+  }
+  .car-body { padding: 1.1rem 1.2rem 1.3rem; }
+  .car-body h3 { font-size: 1.25rem; text-transform: uppercase; }
+  .car-body .specs { font-size: .8rem; color: var(--muted); margin: .25rem 0 .8rem; }
+  .car-body .rate { display: flex; align-items: baseline; justify-content: space-between; }
+  .car-body .rate b { font-family: 'Barlow Condensed', sans-serif; font-size: 1.7rem; font-weight: 800; color: var(--dark); }
+  .car-body .rate b i { font-style: normal; color: var(--red); }
+  .car-body .rate span { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+
+  /* ---------- FLEET BUILDER ---------- */
+  .fb-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 2.4rem; align-items: start; }
+  @media (max-width: 880px) { .fb-grid { grid-template-columns: 1fr; } }
+  .fb-rows { display: grid; gap: .8rem; }
+  .fb-row {
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: .9rem 1.1rem;
+  }
+  .fb-row .info b { font-family: 'Barlow Condensed', sans-serif; font-size: 1.15rem; text-transform: uppercase; display: block; line-height: 1.15; }
+  .fb-row .info span { font-size: .78rem; color: var(--muted); }
+  .stepper { display: flex; align-items: center; gap: .7rem; }
+  .stepper button {
+    width: 32px; height: 32px; border-radius: 8px; border: 2px solid var(--line); background: #fff;
+    font-size: 1.1rem; font-weight: 700; cursor: pointer; color: var(--dark); line-height: 1;
+    font-family: 'Inter', sans-serif;
+  }
+  .stepper button:hover { border-color: var(--red); color: var(--red); }
+  .stepper .qty { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 1.3rem; min-width: 1.6rem; text-align: center; }
+  .fb-summary {
+    background: var(--dark); color: #fff; border-radius: 14px; padding: 1.8rem 1.7rem;
+    position: sticky; top: 90px; box-shadow: 0 18px 44px rgba(0,0,0,.25);
+  }
+  .fb-summary h3 { font-size: 1.4rem; text-transform: uppercase; margin-bottom: 1.1rem; }
+  .fb-summary label { color: #8B919C; }
+  .fb-summary select { background: #22262D; border-color: #343943; color: #fff; margin-bottom: 1.1rem; }
+  .fb-lines { display: grid; gap: .45rem; font-size: .9rem; color: #C9CDD4; border-top: 1px solid #2C313A; padding-top: 1rem; min-height: 2.2rem; }
+  .fb-lines div { display: flex; justify-content: space-between; }
+  .fb-lines .disc { color: #7ED09A; }
+  .fb-total { display: flex; justify-content: space-between; align-items: baseline; border-top: 1px solid #2C313A; margin-top: 1rem; padding-top: 1rem; }
+  .fb-total span { font-size: .78rem; letter-spacing: 2px; text-transform: uppercase; color: #8B919C; font-weight: 700; }
+  .fb-total b { font-family: 'Barlow Condensed', sans-serif; font-size: 2.4rem; font-weight: 800; color: var(--red); line-height: 1; }
+  .fb-total b small { font-size: 1rem; color: #8B919C; font-weight: 600; }
+  .fb-perk { background: rgba(225,29,46,.12); border: 1px solid rgba(225,29,46,.4); border-radius: 8px; font-size: .8rem; color: #E8B9BD; padding: .7rem .9rem; margin-top: 1.1rem; }
+  .fb-perk b { color: #fff; }
+  .fb-summary .btn { width: 100%; margin-top: 1.1rem; }
+
+  /* ---------- SELL STRIP ---------- */
+  .sell { background: var(--bg); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .sell-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.4rem; align-items: center; }
+  @media (max-width: 820px) { .sell-grid { grid-template-columns: 1fr; } }
+  .sell form { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 1.4rem; }
+  .sell form .full { grid-column: 1 / -1; }
+
+  /* ---------- TIE-IN BANNER ---------- */
+  .tiein { background: var(--red); color: #fff; padding: 2.6rem 0; }
+  .tiein-grid { display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+  .tiein h2 { font-size: clamp(1.6rem, 3.4vw, 2.3rem); }
+  .tiein p { color: #FBD9DC; max-width: 52ch; font-size: .95rem; }
+  .tiein .btn { background: #fff; color: var(--red); }
+  .tiein .btn:hover { background: var(--dark); color: #fff; }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.3rem; }
+  .quote { background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 1.6rem 1.5rem; }
+  .quote .stars { color: var(--red); letter-spacing: 2px; margin-bottom: .6rem; }
+  .quote p { font-size: .95rem; }
+  .quote .who { margin-top: .9rem; font-size: .78rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); font-weight: 600; }
+
+  /* ---------- FAQ ---------- */
+  #faq { background: var(--bg); }
+  .faq-list { max-width: 780px; display: grid; gap: .7rem; }
+  details { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 1rem 1.3rem; }
+  details[open] { border-color: var(--red); }
+  summary { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.15rem; text-transform: uppercase; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+  summary::after { content: '+'; color: var(--red); font-size: 1.4rem; font-weight: 400; }
+  details[open] summary::after { content: '–'; }
+  details p { color: var(--muted); font-size: .92rem; padding-top: .6rem; }
+
+  /* ---------- FOOTER ---------- */
+  footer { background: var(--dark); color: #A7ADB8; padding: 3rem 0 2rem; font-size: .88rem; }
+  .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; margin-bottom: 2rem; }
+  @media (max-width: 820px) { .foot-grid { grid-template-columns: 1fr; } }
+  footer h4 { color: #fff; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; letter-spacing: 1px; margin-bottom: .7rem; }
+  footer a { color: #C9CDD4; text-decoration: none; display: block; margin-bottom: .4rem; }
+  footer a:hover { color: var(--red); }
+  .foot-fine { border-top: 1px solid #2C313A; padding-top: 1.2rem; font-size: .78rem; color: #6B717C; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+
+<div class="util">
+  <div class="wrap util-inner">
+    <div>📍 4820 Placeholder Blvd, Houston, TX <span class="dot">•</span> Mon–Sat 8 AM – 7 PM</div>
+    <div>A <a href="https://jhughes281.github.io/treadzone-tires/" target="_blank" rel="noopener">TreadZone Tire &amp; Wheel</a> company <span class="dot">•</span> <a href="tel:+15555550188">(555) 555-0188</a></div>
+  </div>
+</div>
+
+<nav class="top">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#17191D"/><circle cx="50" cy="50" r="40" fill="none" stroke="#E11D2E" stroke-width="7" stroke-dasharray="9 7"/><path d="M30 62 L42 40 L58 40 L70 62 Z" fill="#E11D2E"/><circle cx="40" cy="64" r="6" fill="#E11D2E"/><circle cx="60" cy="64" r="6" fill="#E11D2E"/></svg>
+      <b>Tread<span>Zone</span><small>Auto Group</small></b>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#estimator">Source a Car</a></li>
+      <li><a href="#rentals">Rentals</a></li>
+      <li><a href="#fleet">Fleet</a></li>
+      <li><a href="#sell">Sell Your Car</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a class="btn red" href="#estimator">Find My Car</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker">Auction Sourcing · Rentals · Fleet</div>
+      <h1>Skip the lot.<br>Buy at <em>real</em> auction numbers.</h1>
+      <p>We hold the dealer auction access so you don't have to. Tell us the vehicle — we bid it,
+         inspect it, and hand you the keys for thousands under retail. Need wheels today?
+         Our rental and fleet lines are gassed up and sitting on fresh TreadZone rubber.</p>
+      <div class="hero-perks">
+        <span>Dealer-only auction access</span>
+        <span>Flat broker fee — no games</span>
+        <span>Every unit inspected</span>
+      </div>
+    </div>
+
+    <div class="finder" id="finder">
+      <div class="tabs" role="tablist">
+        <button class="tab active" data-tab="source">Source</button>
+        <button class="tab" data-tab="rent">Rent</button>
+        <button class="tab" data-tab="fleet">Fleet</button>
+      </div>
+      <div class="panel active" id="panel-source">
+        <h3>What are we hunting?</h3>
+        <div class="selects">
+          <div><label>Vehicle type</label>
+            <select id="srcType">
+              <option>Midsize Sedan</option><option>Compact SUV</option><option>Full-Size SUV</option>
+              <option>Half-Ton Truck</option><option>Minivan</option><option>Luxury Sedan</option><option>Sports Coupe</option>
+            </select></div>
+          <div><label>Budget</label>
+            <select><option>Under $15k</option><option>$15k – $25k</option><option>$25k – $40k</option><option>$40k+</option></select></div>
+        </div>
+        <button class="btn red" id="srcGo">See My Auction Numbers →</button>
+        <p class="hint">30-second estimate. No phone number required to look.</p>
+      </div>
+      <div class="panel" id="panel-rent">
+        <h3>Need it this week?</h3>
+        <div class="selects">
+          <div><label>Class</label>
+            <select><option>Any class</option><option>Economy</option><option>SUV</option><option>Truck / Van</option><option>Luxury</option></select></div>
+          <div><label>Pickup</label>
+            <select><option>Today</option><option>Tomorrow</option><option>This weekend</option></select></div>
+        </div>
+        <a class="btn red" href="#rentals">Browse the Fleet →</a>
+        <p class="hint">Unlimited local miles. Free swap if a unit goes down.</p>
+      </div>
+      <div class="panel" id="panel-fleet">
+        <h3>Build a business fleet</h3>
+        <div class="selects">
+          <div><label>Fleet size</label>
+            <select><option>2 – 5 vehicles</option><option>6 – 15 vehicles</option><option>16+ vehicles</option></select></div>
+          <div><label>Term</label>
+            <select><option>3 months</option><option>6 months</option><option>12 months</option></select></div>
+        </div>
+        <a class="btn red" href="#fleet">Price My Fleet →</a>
+        <p class="hint">Includes TreadZone tire care on every unit.</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ STATS ============ -->
+<div class="stats">
+  <div class="wrap stat-row">
+    <div class="stat"><b>1,400<i>+</i></b><span>Vehicles sourced</span></div>
+    <div class="stat"><b>$6,200</b><span>Avg. saved vs. retail</span></div>
+    <div class="stat"><b>200<i>+</i></b><span>Auction locations</span></div>
+    <div class="stat"><b>60<i>+</i></b><span>Fleet units on the road</span></div>
+  </div>
+</div>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">How Sourcing Works</div>
+      <h2>Three steps. Zero dealership.</h2>
+      <p>The lots buy at auction and mark it up. We buy at auction and hand you the receipt.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><b class="num">01</b><h3>Tell us the car</h3>
+        <p>Year, make, model, budget, deal-breakers. We run real recent sale prices with you — the same numbers dealers see — before you commit to anything.</p></div>
+      <div class="step"><b class="num">02</b><h3>We bid it live</h3>
+        <p>Our buyers work 200+ dealer-only auctions nationwide. You get condition reports, photos, and a hard max bid you set. No win, no fee.</p></div>
+      <div class="step"><b class="num">03</b><h3>Inspected &amp; delivered</h3>
+        <p>Won units get a full mechanical once-over and fresh tires at TreadZone before handoff. Drive it home with the paperwork done.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ESTIMATOR ============ -->
+<section id="estimator">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Real Numbers</div>
+      <h2>Retail vs. <em style="font-style:normal;color:var(--red)">your</em> auction price</h2>
+      <p>Pick a class and see typical Houston retail against what the same unit has been hammering for at auction — our flat $1,500 broker fee already baked in.</p>
+    </div>
+    <div class="est-grid">
+      <div class="est-panel">
+        <label>Vehicle class</label>
+        <div class="est-chips" id="estChips"></div>
+        <label for="estMiles">Mileage band</label>
+        <select id="estMiles">
+          <option value="1">Under 30k miles</option>
+          <option value="0.9" selected>30k – 60k miles</option>
+          <option value="0.78">60k – 90k miles</option>
+          <option value="0.66">90k+ miles</option>
+        </select>
+        <a class="btn red" href="#sell" style="width:100%; text-align:center;">Start My Search — No Win, No Fee</a>
+      </div>
+      <div>
+        <div class="bars">
+          <div class="bar-row">
+            <div class="bar-label"><span>Typical retail lot price</span><b id="retailNum">$0</b></div>
+            <div class="bar-track"><div class="bar-fill retail" id="retailBar"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label"><span>Your auction price (fee included)</span><b id="oursNum">$0</b></div>
+            <div class="bar-track"><div class="bar-fill ours" id="oursBar"></div></div>
+          </div>
+        </div>
+        <div class="save-line">
+          <span class="lbl">You keep</span>
+          <b id="saveNum">$0</b>
+          <span class="lbl" id="savePct"></span>
+        </div>
+        <p class="est-fine">Estimates from recent regional auction averages for illustration — your quote is built from live sale data for the exact trim you want. Demo site: figures are placeholders.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RENTALS ============ -->
+<section id="rentals">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Daily &amp; Weekly Rentals</div>
+      <h2>The rental fleet</h2>
+      <p>Clean, inspected, and rolling on fresh TreadZone tires. Unlimited local miles on every unit.</p>
+    </div>
+    <div class="filter-row" id="fleetFilters"></div>
+    <div class="fleet-grid" id="fleetGrid"></div>
+  </div>
+</section>
+
+<!-- ============ FLEET BUILDER ============ -->
+<section id="fleet">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Business Fleet Rental</div>
+      <h2>Build your fleet, price it live</h2>
+      <p>Contractors, couriers, crews, rideshare operators — spec your fleet below and watch the monthly number update. Longer terms unlock real discounts.</p>
+    </div>
+    <div class="fb-grid">
+      <div class="fb-rows" id="fbRows"></div>
+      <aside class="fb-summary">
+        <h3>Your fleet quote</h3>
+        <label for="fbTerm">Term length</label>
+        <select id="fbTerm">
+          <option value="0">3 months — standard rate</option>
+          <option value="0.05">6 months — save 5%</option>
+          <option value="0.12">12 months — save 12%</option>
+        </select>
+        <div class="fb-lines" id="fbLines"><div style="color:#6B717C">Add vehicles to start your quote…</div></div>
+        <div class="fb-total"><span>Est. monthly</span><b id="fbTotal">$0<small>/mo</small></b></div>
+        <div class="fb-perk"><b>TreadZone perk:</b> every fleet unit includes tires, rotations &amp; flat repair at TreadZone Tire &amp; Wheel — $0 out of pocket.</div>
+        <button class="btn red" id="fbSend">Request This Quote</button>
+        <p class="hint" id="fbConfirm" style="display:none; color:#7ED09A; margin-top:.8rem; font-family:'Inter',sans-serif; font-size:.85rem;"></p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SELL / SOURCE FORM ============ -->
+<section class="sell" id="sell">
+  <div class="wrap sell-grid">
+    <div class="sec-head" style="margin-bottom:0">
+      <div class="kicker">Buying &amp; Selling</div>
+      <h2>We buy cars, too.</h2>
+      <p>Skip the trade-in lowball. We buy clean vehicles outright at real market numbers — or start your sourcing search here and we'll call you with live auction comps within one business day.</p>
+    </div>
+    <form id="sellForm">
+      <div><label>Name</label><input type="text" placeholder="Your name" required></div>
+      <div><label>Phone</label><input type="tel" placeholder="(555) 555-0100" required></div>
+      <div class="full"><label>I want to…</label>
+        <select id="sellIntent"><option>Source a car at auction</option><option>Sell my car</option><option>Both — sell mine, source the next one</option></select></div>
+      <div class="full"><label>Vehicle details</label><input type="text" placeholder="e.g. 2021 Tacoma TRD, under 60k miles"></div>
+      <div class="full"><button class="btn red" type="submit" style="width:100%">Get My Numbers</button></div>
+      <p class="hint full" id="sellConfirm" style="display:none; color:#1F8A4C;"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ TIE-IN ============ -->
+<section class="tiein">
+  <div class="wrap tiein-grid">
+    <div>
+      <h2>One family. Rubber to road.</h2>
+      <p>TreadZone Auto Group is the sister company of TreadZone Tire &amp; Wheel. Every sourced, rented,
+         and fleet vehicle leaves on fresh rubber — and Auto Group customers get 15% off tires and
+         lifetime free rotations next door.</p>
+    </div>
+    <a class="btn" href="https://jhughes281.github.io/treadzone-tires/" target="_blank" rel="noopener">Visit TreadZone Tire &amp; Wheel →</a>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Word of Mouth</div>
+      <h2>Receipts from real buyers</h2>
+    </div>
+    <div class="quotes">
+      <div class="quote"><div class="stars">★★★★★</div>
+        <p>"Wanted a Grand Highlander, dealers were adding $3k in 'market adjustment.' TreadZone sourced one with 22k miles for $7,400 under the best lot price I found. Saw every auction photo before they bid."</p>
+        <div class="who">— Carlos R., sourced buyer</div></div>
+      <div class="quote"><div class="stars">★★★★★</div>
+        <p>"We run six cargo vans through their fleet program. When one caught a bolt on I-45, they swapped the van AND the tire bill was zero because of the TreadZone deal. That's why we renewed for 12 months."</p>
+        <div class="who">— Danielle M., courier company owner</div></div>
+      <div class="quote"><div class="stars">★★★★★</div>
+        <p>"Sold them my old F-150 for $2,100 more than CarMax offered and rented a midsize the same afternoon while they sourced my replacement. One shop, whole problem handled."</p>
+        <div class="who">— James T., sell + source client</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Straight Answers</div>
+      <h2>Questions we get daily</h2>
+    </div>
+    <div class="faq-list">
+      <details><summary>How does the broker fee work?</summary>
+        <p>Flat $1,500 on sourced vehicles, only when we win your car within your max bid. No win, no fee. The estimator above already includes it — the number you see is the number you pay, plus tax, title, and transport at cost.</p></details>
+      <details><summary>Can I really see the auction data?</summary>
+        <p>Yes. Before we bid, we sit down with recent sale prices for the exact year, trim, and mileage band — the same data dealers use. You set the max bid; we never exceed it.</p></details>
+      <details><summary>What's included in fleet pricing?</summary>
+        <p>Insurance-ready inspected vehicles, maintenance, roadside swap, and full tire care (tires, rotations, flat repair) through TreadZone Tire &amp; Wheel. You fuel it and drive it.</p></details>
+      <details><summary>What if the car has problems when it arrives?</summary>
+        <p>Every unit passes a mechanical inspection and a fresh-tire fitting before handoff. If something material was missed in the condition report, we make it right or run the arbitration process with the auction house on your behalf.</p></details>
+      <details><summary>Do you rent to businesses only?</summary>
+        <p>No — the daily rental fleet is open to anyone 21+ with a license and card. The fleet program (multi-vehicle, multi-month) is where the business pricing kicks in.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>TreadZone Auto Group</h4>
+        <p>Auction sourcing, daily rentals, and business fleets — Houston, TX.
+           Sister company of TreadZone Tire &amp; Wheel. Demo site by Hughes Strategic Group;
+           all business details are placeholders.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <a href="#estimator">Auction Sourcing</a>
+        <a href="#rentals">Daily Rentals</a>
+        <a href="#fleet">Fleet Program</a>
+        <a href="#sell">Sell Your Car</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+15555550188">(555) 555-0188</a>
+        <a href="mailto:hello@treadzoneauto.example">hello@treadzoneauto.example</a>
+        <a href="https://jhughes281.github.io/treadzone-tires/" target="_blank" rel="noopener">TreadZone Tire &amp; Wheel ↗</a>
+      </div>
+    </div>
+    <div class="foot-fine">
+      <span>© 2026 TreadZone Auto Group — a TreadZone company.</span>
+      <span>Mon–Sat 8 AM – 7 PM · 4820 Placeholder Blvd, Houston, TX</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============ hero tabs ============ */
+document.querySelectorAll('.tab').forEach(t => {
+  t.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById('panel-' + t.dataset.tab).classList.add('active');
+  });
+});
+
+/* ============ estimator ============ */
+const CLASSES = [
+  { name: 'Midsize Sedan',  retail: 24500, auction: 18300 },
+  { name: 'Compact SUV',    retail: 28400, auction: 21700 },
+  { name: 'Full-Size SUV',  retail: 47800, auction: 38900 },
+  { name: 'Half-Ton Truck', retail: 42300, auction: 33600 },
+  { name: 'Minivan',        retail: 31900, auction: 25100 },
+  { name: 'Luxury Sedan',   retail: 51200, auction: 40400 },
+  { name: 'Sports Coupe',   retail: 44700, auction: 36200 },
+];
+const FEE = 1500;
+const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
+
+const chipsEl = document.getElementById('estChips');
+chipsEl.innerHTML = CLASSES.map((c, i) =>
+  `<button class="chip${i === 0 ? ' active' : ''}" data-i="${i}">${c.name}</button>`).join('');
+
+let estIdx = 0;
+let raf = null;
+
+function animateNum(el, to) {
+  const from = parseInt(el.dataset.v || '0', 10);
+  const t0 = performance.now();
+  function tick(t) {
+    const p = Math.min((t - t0) / 900, 1);
+    const eased = 1 - Math.pow(1 - p, 3);
+    el.textContent = fmt(from + (to - from) * eased);
+    if (p < 1) requestAnimationFrame(tick);
+    else el.dataset.v = to;
+  }
+  requestAnimationFrame(tick);
+}
+
+function runEstimate() {
+  const mult = parseFloat(document.getElementById('estMiles').value);
+  const c = CLASSES[estIdx];
+  const retail = c.retail * mult;
+  const ours = c.auction * mult + FEE;
+  const save = retail - ours;
+  document.getElementById('retailBar').style.width = '100%';
+  document.getElementById('oursBar').style.width = (ours / retail * 100) + '%';
+  animateNum(document.getElementById('retailNum'), retail);
+  animateNum(document.getElementById('oursNum'), ours);
+  animateNum(document.getElementById('saveNum'), save);
+  document.getElementById('savePct').textContent = Math.round(save / retail * 100) + '% under retail';
+}
+
+chipsEl.querySelectorAll('.chip').forEach(ch => {
+  ch.addEventListener('click', () => {
+    chipsEl.querySelectorAll('.chip').forEach(x => x.classList.remove('active'));
+    ch.classList.add('active');
+    estIdx = +ch.dataset.i;
+    runEstimate();
+  });
+});
+document.getElementById('estMiles').addEventListener('change', runEstimate);
+
+/* hero "source" button prefills estimator */
+document.getElementById('srcGo').addEventListener('click', () => {
+  const type = document.getElementById('srcType').value;
+  const i = CLASSES.findIndex(c => c.name === type);
+  if (i >= 0) {
+    estIdx = i;
+    chipsEl.querySelectorAll('.chip').forEach((x, j) => x.classList.toggle('active', j === i));
+    runEstimate();
+  }
+  document.getElementById('estimator').scrollIntoView({ behavior: 'smooth' });
+});
+
+/* run estimator when scrolled into view the first time */
+new IntersectionObserver((entries, obs) => {
+  if (entries[0].isIntersecting) { runEstimate(); obs.disconnect(); }
+}, { threshold: .35 }).observe(document.getElementById('estimator'));
+
+/* ============ rental fleet ============ */
+const FLEET = [
+  { name: 'Compact Commuter', cls: 'Economy', cat: 'car',   day: 39,  specs: '4-door · 38 MPG · Bluetooth' },
+  { name: 'Midsize Sedan',    cls: 'Midsize', cat: 'car',   day: 49,  specs: '5 seats · CarPlay · 34 MPG' },
+  { name: 'Compact SUV',      cls: 'SUV',     cat: 'suv',   day: 64,  specs: 'AWD · 5 seats · roof rails' },
+  { name: 'Full-Size SUV',    cls: 'SUV',     cat: 'suv',   day: 89,  specs: '7 seats · tow pkg · 4WD' },
+  { name: 'Half-Ton Pickup',  cls: 'Truck',   cat: 'truck', day: 79,  specs: 'Crew cab · 6.5′ bed · tow pkg' },
+  { name: 'Cargo Van',        cls: 'Van',     cat: 'truck', day: 99,  specs: 'High roof · 250 cu ft · shelving' },
+  { name: 'Minivan',          cls: 'Van',     cat: 'suv',   day: 84,  specs: '8 seats · power doors · DVD' },
+  { name: 'Luxury Sedan',     cls: 'Luxury',  cat: 'lux',   day: 129, specs: 'Leather · premium audio · V6' },
+];
+const CAR_SVG = {
+  car:   '<svg viewBox="0 0 160 70" fill="none"><path d="M18 48 C22 34 38 26 60 25 L74 14 C76 12 80 11 86 11 L106 11 C112 11 116 13 119 17 L128 27 C142 29 150 36 151 45 L151 50 C151 53 149 55 146 55 L14 55 C11 55 9 53 9 50 L9 49 C9 49 13 48 18 48 Z" fill="#3A4049"/><path d="M79 15 L74 26 L100 26 L96 15 Z M104 15 L108 26 L122 26 L114 16 Z" fill="#20242B"/><circle cx="42" cy="55" r="11" fill="#14161A" stroke="#E11D2E" stroke-width="3" stroke-dasharray="4 3"/><circle cx="120" cy="55" r="11" fill="#14161A" stroke="#E11D2E" stroke-width="3" stroke-dasharray="4 3"/></svg>',
+  suv:   '<svg viewBox="0 0 160 70" fill="none"><path d="M14 50 L16 30 C17 24 21 20 28 19 L52 16 C56 12 62 10 70 10 L118 10 C126 10 131 13 134 19 L142 32 C148 34 151 38 151 44 L151 50 C151 53 149 55 146 55 L18 55 C15 55 13 53 14 50 Z" fill="#3A4049"/><path d="M62 15 L58 27 L86 27 L84 15 Z M92 15 L94 27 L120 27 L112 15 Z" fill="#20242B"/><circle cx="44" cy="55" r="12" fill="#14161A" stroke="#E11D2E" stroke-width="3" stroke-dasharray="4 3"/><circle cx="120" cy="55" r="12" fill="#14161A" stroke="#E11D2E" stroke-width="3" stroke-dasharray="4 3"/></svg>',
+  truck: '<svg viewBox="0 0 160 70" fill="none"><path d="M10 50 L10 24 C10 21 12 19 15 19 L70 19 L70 50 Z" fill="#3A4049"/><path d="M74 50 L74 14 C74 11 76 9 79 9 L104 9 C108 9 111 11 113 14 L124 28 L142 31 C148 32 151 37 151 43 L151 50 Z" fill="#3A4049"/><path d="M82 14 L82 27 L108 27 L100 14 Z" fill="#20242B"/><circle cx="40" cy="53" r="12" fill="#14161A" stroke="#E11D2E" stroke-width="3" stroke-dasharray="4 3"/><circle cx="122" cy="53" r="12" fill="#14161A" stroke="#E11D2E" stroke-width="3" stroke-dasharray="4 3"/></svg>',
+  lux:   '<svg viewBox="0 0 160 70" fill="none"><path d="M12 50 C14 38 30 30 58 28 L76 15 C79 12 84 10 92 10 L110 10 C118 10 124 13 128 19 L134 28 C146 30 152 37 152 46 L152 51 C152 54 150 56 147 56 L15 56 C12 56 10 54 10 51 Z" fill="#464C57"/><path d="M84 14 L78 28 L104 28 L100 14 Z M108 14 L112 28 L126 28 L118 16 Z" fill="#20242B"/><circle cx="44" cy="56" r="11" fill="#14161A" stroke="#E11D2E" stroke-width="3" stroke-dasharray="4 3"/><circle cx="122" cy="56" r="11" fill="#14161A" stroke="#E11D2E" stroke-width="3" stroke-dasharray="4 3"/></svg>',
+};
+const FILTERS = [
+  { key: 'all',   label: 'All vehicles' },
+  { key: 'car',   label: 'Cars' },
+  { key: 'suv',   label: 'SUVs & Vans' },
+  { key: 'truck', label: 'Trucks & Cargo' },
+  { key: 'lux',   label: 'Luxury' },
+];
+const filterRow = document.getElementById('fleetFilters');
+filterRow.innerHTML = FILTERS.map((f, i) =>
+  `<button class="fchip${i === 0 ? ' active' : ''}" data-k="${f.key}">${f.label}</button>`).join('');
+
+function renderFleet(key) {
+  document.getElementById('fleetGrid').innerHTML = FLEET
+    .filter(v => key === 'all' || v.cat === key)
+    .map(v => `
+      <div class="car">
+        <div class="car-top"><span class="cls">${v.cls}</span>${CAR_SVG[v.cat]}</div>
+        <div class="car-body">
+          <h3>${v.name}</h3>
+          <div class="specs">${v.specs}</div>
+          <div class="rate"><b>$${v.day}<i>/day</i></b><span>weekly from $${Math.round(v.day * 5.5)}</span></div>
+        </div>
+      </div>`).join('');
+}
+renderFleet('all');
+filterRow.querySelectorAll('.fchip').forEach(ch => {
+  ch.addEventListener('click', () => {
+    filterRow.querySelectorAll('.fchip').forEach(x => x.classList.remove('active'));
+    ch.classList.add('active');
+    renderFleet(ch.dataset.k);
+  });
+});
+
+/* ============ fleet builder ============ */
+const FB = [
+  { name: 'Cargo Van',       mo: 1450, note: 'High roof, shelving-ready' },
+  { name: 'Half-Ton Pickup', mo: 1250, note: 'Crew cab, tow package' },
+  { name: 'Box Truck',       mo: 1850, note: '16′ box, liftgate' },
+  { name: 'Compact SUV',     mo: 890,  note: 'AWD, rideshare-eligible' },
+  { name: 'Midsize Sedan',   mo: 780,  note: 'Courier & sales fleets' },
+];
+const qty = FB.map(() => 0);
+const fbRows = document.getElementById('fbRows');
+fbRows.innerHTML = FB.map((v, i) => `
+  <div class="fb-row">
+    <div class="info"><b>${v.name}</b><span>${v.note} — ${fmt(v.mo)}/mo per unit</span></div>
+    <div class="stepper">
+      <button type="button" data-i="${i}" data-d="-1" aria-label="Remove one ${v.name}">−</button>
+      <span class="qty" id="q${i}">0</span>
+      <button type="button" data-i="${i}" data-d="1" aria-label="Add one ${v.name}">+</button>
+    </div>
+  </div>`).join('');
+
+function renderQuote() {
+  const disc = parseFloat(document.getElementById('fbTerm').value);
+  const lines = [];
+  let subtotal = 0;
+  FB.forEach((v, i) => {
+    if (qty[i] > 0) {
+      const amt = v.mo * qty[i];
+      subtotal += amt;
+      lines.push(`<div><span>${qty[i]}× ${v.name}</span><span>${fmt(amt)}</span></div>`);
+    }
+  });
+  const discAmt = subtotal * disc;
+  if (discAmt > 0) lines.push(`<div class="disc"><span>Term discount</span><span>−${fmt(discAmt)}</span></div>`);
+  document.getElementById('fbLines').innerHTML =
+    lines.length ? lines.join('') : '<div style="color:#6B717C">Add vehicles to start your quote…</div>';
+  document.getElementById('fbTotal').innerHTML = fmt(subtotal - discAmt) + '<small>/mo</small>';
+}
+
+fbRows.querySelectorAll('.stepper button').forEach(b => {
+  b.addEventListener('click', () => {
+    const i = +b.dataset.i;
+    qty[i] = Math.min(20, Math.max(0, qty[i] + (+b.dataset.d)));
+    document.getElementById('q' + i).textContent = qty[i];
+    renderQuote();
+  });
+});
+document.getElementById('fbTerm').addEventListener('change', renderQuote);
+
+document.getElementById('fbSend').addEventListener('click', () => {
+  const total = qty.reduce((a, b) => a + b, 0);
+  const msg = document.getElementById('fbConfirm');
+  msg.style.display = 'block';
+  msg.textContent = total > 0
+    ? `✓ Quote request sent for ${total} vehicle${total > 1 ? 's' : ''} — our fleet manager will call within one business day. (Demo site — no real request was sent.)`
+    : 'Add at least one vehicle to request a quote.';
+});
+
+/* ============ sell/source form ============ */
+document.getElementById('sellForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const intent = document.getElementById('sellIntent').value;
+  const msg = document.getElementById('sellConfirm');
+  msg.style.display = 'block';
+  msg.textContent = `✓ Got it — "${intent}." We'll call you with real numbers within one business day. (Demo site — no real request was sent.)`;
+});
+</script>
+</body>
+</html>
